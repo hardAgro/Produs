@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_08_153241) do
+ActiveRecord::Schema.define(version: 2018_12_08_232915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "concentrations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "element_id"
+    t.decimal "value"
+    t.boolean "acceptable"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["element_id"], name: "index_concentrations_on_element_id"
+    t.index ["user_id"], name: "index_concentrations_on_user_id"
+  end
 
   create_table "diseases", force: :cascade do |t|
     t.bigint "plant_id"
@@ -22,6 +33,17 @@ ActiveRecord::Schema.define(version: 2018_12_08_153241) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["plant_id"], name: "index_diseases_on_plant_id"
+  end
+
+  create_table "elements", force: :cascade do |t|
+    t.string "name"
+    t.decimal "slope"
+    t.decimal "intersection"
+    t.decimal "error"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "upper_limit"
+    t.decimal "inferior_limit"
   end
 
   create_table "plants", force: :cascade do |t|
@@ -71,6 +93,8 @@ ActiveRecord::Schema.define(version: 2018_12_08_153241) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "concentrations", "elements"
+  add_foreign_key "concentrations", "users"
   add_foreign_key "diseases", "plants"
   add_foreign_key "situations", "plants"
 end
