@@ -1,0 +1,36 @@
+<!-- BEGIN MENUBAR-->
+<div id="menubar" class="menubar-inverse ">
+  <div class="menubar-fixed-panel">
+    <div>
+      <a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div class="expanded">
+      <%= link_to dashboards_path do %>
+        <span class="text-lg text-bold text-primary ">Produs</span>
+      <% end %>
+    </div>
+  </div>
+  <div class="menubar-scroll-panel">
+
+    <!-- BEGIN MAIN MENU -->
+    <ul id="main-menu" class="gui-controls">
+
+      <!-- BEGIN DASHBOARD -->
+      <li>
+        <%= link_to_menu("Dashboard", dashboards_path, "home", :dashboards) %>
+      </li>
+      <li>
+        <%= link_to_menu("Plantas", plants_path, "tonality", :plants) %>
+      </li>
+      <li>
+        <%= link_to_menu("Situações", situations_path, "change_history", :situations) %>
+      </li>
+      <!-- END DASHBOARD -->
+
+    </ul><!--end .main-menu -->
+    <!-- END MAIN MENU -->
+  </div><!--end .menubar-scroll-panel-->
+</div><!--end #menubar-->
+<!-- END MENUBAR -->

@@ -1,0 +1,22 @@
+<%= simple_form_for(@situation) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="row">
+      <div class="col-md-3">
+        <%= f.association :plant %>
+      </div>
+      <div class="col-md-3">
+        <%= f.input :description %>
+      </div>
+      <div class="col-md-3">
+        <%= f.input :spectrum %>
+      </div>
+    </div>
+  </div>
+
+  <div class="pull-right form-actions">
+    <%= link_to 'Back', situations_path, class: 'btn btn-default' %>
+    <%= f.button :submit, class: 'btn btn-success' %>
+  </div>
+<% end %>

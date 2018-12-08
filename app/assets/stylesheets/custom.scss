@@ -1,0 +1,78 @@
+/* DEVISE */
+#body-devise .card-head header {
+  display: block;
+}
+/* END.DEVISE */
+
+/* BUTTONS */
+.btn-icon-toggle .material-icons {
+  margin: 0;
+  line-height: 34px;
+}
+.btn-icon-toggle.btn-lg .material-icons {
+  line-height: 44px;
+}
+.btn-icon-toggle.btn-sm .material-icons {
+  line-height: 30px;
+}
+.btn-icon-toggle.btn-xs .material-icons {
+  line-height: 22px;
+}
+/* END.BUTTONS */
+
+/* FORM */
+.form-group {
+  padding-top: 16px;
+}
+/* END.FORM */
+
+
+/* MODALS */
+  .modal-body .card {
+    box-shadow: none;
+    webkit-box-shadow: none;
+  }
+/* END.MODALS */
+
+/* OTHERS */
+form abbr {
+  color: #f44336;
+}
+section.section-account .spacer {
+  height: 120px;
+}
+.gui-icon .material-icons {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  line-height: 25px;
+  width: 1em;
+}
+#logo {
+  height: 50px;
+}
+.dl-horizontal dt {
+  background-color: #f2f2f2;
+  padding: 8px;
+  width: 200px;
+}
+.dl-horizontal dd {
+  border-top: 1px solid #f2f2f2;
+  border-left: 1px solid #f2f2f2;
+  border-right: 1px solid #f2f2f2;
+  padding: 10px;
+  margin-left: 0;
+  vertical-align: middle;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-height: 41px;
+
+  &:last-child {
+    border-bottom: 1px solid #f2f2f2;
+  }
+}
+/* END.OTHERS */

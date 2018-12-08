@@ -1,0 +1,38 @@
+<div id="toast-container" class="toast-top-right">
+  <% if flash[:alert] %>
+    <div class="toast toast-warning">
+      <div class="toast-progress"></div>
+      <button type="button" class="toast-close-button">×</button>
+      <div class="toast-title">Atenção!</div>
+      <div class="toast-message"><%= flash.discard[:alert] %></div>
+    </div>
+  <% end %>
+
+  <% if flash[:notice] %>
+    <div class="toast toast-success">
+      <div class="toast-progress"></div>
+      <button type="button" class="toast-close-button">×</button>
+      <div class="toast-title">Sucesso!</div>
+      <div class="toast-message"><%= flash.discard[:notice] %></div>
+    </div>
+  <% end %>
+
+  <% if flash[:error] %>
+    <div class="toast toast-error">
+      <div class="toast-progress"></div>
+      <button type="button" class="toast-close-button">×</button>
+      <div class="toast-title">Erro!</div>
+      <div class="toast-message">
+        <% if flash[:error].class == String %>
+          <%= flash.discard[:error] %>
+        <% else %>
+          <ul>
+            <% flash.discard[:error].each do |error|  %>
+              <li><%= error %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

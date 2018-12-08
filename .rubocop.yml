@@ -1,0 +1,51 @@
+require: rubocop-rspec
+
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 100
+
+Metrics/MethodLength:
+  Max: 10
+
+Metrics/ModuleLength:
+  Max: 600
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*.rb
+    - config/routes.rb
+    - config/deploy.rb
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
+RSpec/VerifiedDoubles:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
+
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+    - 'Gemfile.lock'
+    - 'bin/**/*'
+    - 'db/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'log/**/*'
+    - 'config/initializers/**/*'
+    - 'config/environments/**/*'
+    - 'app/services/seed/**/*'
+    - 'app/repositories/**/*'

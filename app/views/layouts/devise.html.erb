@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Produs</title>
+    <!-- BEGIN META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= csrf_meta_tags %>
+    <!-- END META -->
+
+    <!-- BEGIN STYLESHEETS -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet' type='text/css'/>
+
+    <%= stylesheet_link_tag    'devise', media: 'all' %>
+    <!-- END STYLESHEETS -->
+
+    <%= javascript_include_tag 'devise' %>
+  </head>
+
+  <body id="body-devise">
+    <!-- BEGIN LOGIN SECTION -->
+    <section class="section-account">
+      <div class="spacer"></div>
+      <div class="card contain-xs">
+        <div class="card-head">
+          <header class="text-center">
+            Produs
+            <%# image_tag "logo.png", alt: "Produs" %>
+          </header>
+        </div>
+        <div class="card-body">
+          <%= render 'shared/toast_messages' %>
+          <%= yield %>
+        </div><!--end .card-body -->
+      </div><!--end .card -->
+    </section>
+    <!-- END LOGIN SECTION -->
+  </body>
+</html>

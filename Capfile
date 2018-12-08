@@ -1,0 +1,26 @@
+# frozen_string_literal: true
+
+# Load DSL and set up stages
+require 'capistrano/setup'
+
+# Include default deployment tasks
+require 'capistrano/deploy'
+
+# https://github.com/capistrano/rails
+# require 'capistrano/rails'
+
+require 'capistrano/bundler'
+# require 'capistrano/rails/assets'
+require 'capistrano/rails/migrations'
+
+# https://github.com/ydkn/capistrano-rails-console
+require 'capistrano/rails/console'
+# https://github.com/capistrano/bundler
+require 'capistrano/bundler'
+# https://github.com/capistrano/rvm
+require 'capistrano/rvm'
+# https://github.com/seuros/capistrano-puma
+require 'capistrano/puma'
+
+# Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
+Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
