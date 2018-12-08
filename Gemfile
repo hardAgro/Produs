@@ -9,8 +9,9 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.0', '>= 5.2.0'
+gem 'rails', '~> 5.2.2'
 
+gem "activestorage", ">= 5.2.1.1"
 gem 'rack-cors', '~> 1.0.2', require: 'rack/cors'
 # jQuery Select2
 gem 'select2-rails', '~> 4.0'
