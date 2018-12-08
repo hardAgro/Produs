@@ -1,5 +1,5 @@
 class Api::DataController < Api::ApiBaseController
   def create
-    render json: { received: params }
+    render json: { ldr: params[:_json] }
   end
 end

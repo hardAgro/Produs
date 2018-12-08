@@ -10,6 +10,7 @@ capybara-*.html
 .rspec
 /log/*
 .idea
+push.rb
 !/log/.keep
 /db/dumps/*
 !/db/dumps/.keep
