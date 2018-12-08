@@ -30,8 +30,6 @@ gem 'jquery-rails', '~> 4.3'
 # Fonts library
 gem "font-awesome-rails"
 gem 'material_icons', '~> 2.2'
-# Image Upload
-gem 'carrierwave', '~> 1.2'
 gem 'fog', require: 'fog/aws'
 gem 'mini_magick', '~> 4.8'
 # WYSIWYG Editor
