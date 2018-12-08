@@ -23,4 +23,3 @@ class FormatPresenter
     "(#{value[0, 2]}) #{value[3, 5]}-#{value[8, 4]}".strip unless value.empty?
   end
 end
-app / controllers / application_controller.rb
