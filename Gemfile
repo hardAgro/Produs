@@ -11,6 +11,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0', '>= 5.2.0'
 
+gem 'rack-cors', '~> 1.0.2', require: 'rack/cors'
 # jQuery Select2
 gem 'select2-rails', '~> 4.0'
 # Use postgresql as the database for Active Record

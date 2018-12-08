@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   resources :summernote_images, only: :create
 
   get '/search_address/:cep', to: 'search_address#new', as: :search_address
+
+  namespace :api do
+    resources :data, only: :create
+  end
 end
