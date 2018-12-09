@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_09_003018) do
+ActiveRecord::Schema.define(version: 2018_12_09_162244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,11 +55,9 @@ ActiveRecord::Schema.define(version: 2018_12_09_003018) do
   end
 
   create_table "measurements", force: :cascade do |t|
-    t.bigint "user_id"
     t.decimal "ibn"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_measurements_on_user_id"
   end
 
   create_table "plants", force: :cascade do |t|
@@ -113,6 +111,5 @@ ActiveRecord::Schema.define(version: 2018_12_09_003018) do
   add_foreign_key "concentrations", "users"
   add_foreign_key "diseases", "plants"
   add_foreign_key "dris", "elements"
-  add_foreign_key "measurements", "users"
   add_foreign_key "situations", "plants"
 end
