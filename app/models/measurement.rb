@@ -6,7 +6,7 @@ class Measurement < ApplicationRecord
   def self.calculate(current_user, irc)
     concentrations = Wavelength.calculate(irc)
     dris = Dri.calculate(concentrations)
-    ibn = # TODO
+    ibn = dris.sum(:value) / dris.count
     current_user.measurements.create(ibn: ibn)
   end
 end
