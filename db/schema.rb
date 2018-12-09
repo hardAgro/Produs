@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_08_232915) do
+ActiveRecord::Schema.define(version: 2018_12_09_003018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(version: 2018_12_08_232915) do
     t.index ["plant_id"], name: "index_diseases_on_plant_id"
   end
 
+  create_table "dris", force: :cascade do |t|
+    t.bigint "element_id"
+    t.decimal "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["element_id"], name: "index_dris_on_element_id"
+  end
+
   create_table "elements", force: :cascade do |t|
     t.string "name"
     t.decimal "slope"
@@ -44,6 +52,14 @@ ActiveRecord::Schema.define(version: 2018_12_08_232915) do
     t.datetime "updated_at", null: false
     t.decimal "upper_limit"
     t.decimal "inferior_limit"
+  end
+
+  create_table "measurements", force: :cascade do |t|
+    t.bigint "user_id"
+    t.decimal "ibn"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_measurements_on_user_id"
   end
 
   create_table "plants", force: :cascade do |t|
@@ -96,5 +112,7 @@ ActiveRecord::Schema.define(version: 2018_12_08_232915) do
   add_foreign_key "concentrations", "elements"
   add_foreign_key "concentrations", "users"
   add_foreign_key "diseases", "plants"
+  add_foreign_key "dris", "elements"
+  add_foreign_key "measurements", "users"
   add_foreign_key "situations", "plants"
 end

@@ -8,12 +8,11 @@ class Wavelength
       (RED_LENGTH * ldr.to_f) / RED_LDR
     end
 
-    def calculate(current_user, irc)
+    def calculate(irc)
       Element.all.map do |element|
         result = element.intersection + element.slope * irc + element.error
-        acceptable = result > element.inferior_limit && result < element.upper_limit
-        element.concentrations.create(user: current_user, value: result, acceptable: acceptable)
-        # TODO: do something if value is not acceptable
+        acceptable = result > element.inferior_limit && result < element.upper_limit # TODO: do something if value is not acceptable
+        element.concentrations.create(value: result, acceptable: acceptable)
       end
     end
   end
