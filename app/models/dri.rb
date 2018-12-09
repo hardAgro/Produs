@@ -1,5 +1,6 @@
 class Dri < ApplicationRecord
   belongs_to :element
+  belongs_to :measurement
 
   def self.calculate(concentrations)
     concentrations.each do |concentration|

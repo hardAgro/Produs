@@ -2,6 +2,6 @@
 
 class DashboardsController < ApplicationController
   def index
-    # @cobra = Python.run('produs.py')
+    @concentrations = Measurement.last.concentrations
   end
 end

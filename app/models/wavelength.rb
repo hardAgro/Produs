@@ -12,7 +12,7 @@ class Wavelength
       Element.all.map do |element|
         result = element.intersection + element.slope * irc + element.error
         acceptable = result > element.inferior_limit && result < element.upper_limit # TODO: do something if value is not acceptable
-        element.concentrations.create(value: result, acceptable: acceptable)
+        element.concentrations.new(value: result, acceptable: acceptable)
       end
     end
   end
