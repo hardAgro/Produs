@@ -8,6 +8,6 @@ class Measurement < ApplicationRecord
     ibn = dris.pluck(:value).sum / dris.count
     measurement = Measurement.create(ibn: ibn)
     concentrations.each { |c| c.update_attribute(:measurement_id, measurement.id) }
-    dris.each { |d| d.update_all(:measurement_id, measurement.id) }
+    dris.each { |d| d.update_attribute(:measurement_id, measurement.id) }
   end
 end
