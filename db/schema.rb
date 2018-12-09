@@ -10,29 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_09_162244) do
+ActiveRecord::Schema.define(version: 2018_12_09_171201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "concentrations", force: :cascade do |t|
-    t.bigint "user_id"
     t.bigint "element_id"
     t.decimal "value"
     t.boolean "acceptable"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "measurement_id"
     t.index ["element_id"], name: "index_concentrations_on_element_id"
-    t.index ["user_id"], name: "index_concentrations_on_user_id"
-  end
-
-  create_table "diseases", force: :cascade do |t|
-    t.bigint "plant_id"
-    t.float "spectrum"
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["plant_id"], name: "index_diseases_on_plant_id"
+    t.index ["measurement_id"], name: "index_concentrations_on_measurement_id"
   end
 
   create_table "dris", force: :cascade do |t|
@@ -40,7 +31,9 @@ ActiveRecord::Schema.define(version: 2018_12_09_162244) do
     t.decimal "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "measurement_id"
     t.index ["element_id"], name: "index_dris_on_element_id"
+    t.index ["measurement_id"], name: "index_dris_on_measurement_id"
   end
 
   create_table "elements", force: :cascade do |t|
@@ -75,18 +68,6 @@ ActiveRecord::Schema.define(version: 2018_12_09_162244) do
     t.index ["plant_id"], name: "index_situations_on_plant_id"
   end
 
-  create_table "species", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "summernote_images", id: :serial, force: :cascade do |t|
-    t.string "file"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", id: :serial, force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
@@ -108,8 +89,8 @@ ActiveRecord::Schema.define(version: 2018_12_09_162244) do
   end
 
   add_foreign_key "concentrations", "elements"
-  add_foreign_key "concentrations", "users"
-  add_foreign_key "diseases", "plants"
+  add_foreign_key "concentrations", "measurements"
   add_foreign_key "dris", "elements"
+  add_foreign_key "dris", "measurements"
   add_foreign_key "situations", "plants"
 end
