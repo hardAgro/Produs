@@ -68,7 +68,7 @@
 			}
 		});
 	};
-	
+
 	// =========================================================================
 	// FLOT
 	// =========================================================================
@@ -76,41 +76,41 @@
 	p._initFlotVisitors = function () {
 		var o = this;
 		var chart = $("#flot-visitors");
-		
+
 		// Elements check
 		if (!$.isFunction($.fn.plot) || chart.length === 0) {
 			return;
 		}
-		
+
 		// Chart data
 		var data = [
 			{
-				label: 'Pageviews',
+				label: 'IBN Desejado',
 				data: [
-					[moment().subtract(168, 'hours').valueOf(), 50],
-					[moment().subtract(144, 'hours').valueOf(), 620],
-					[moment().subtract(108, 'hours').valueOf(), 380],
-					[moment().subtract(70, 'hours').valueOf(), 880],
-					[moment().subtract(30, 'hours').valueOf(), 450],
-					[moment().subtract(12, 'hours').valueOf(), 600],
+					[moment().subtract(168, 'Desejado').valueOf(), 50],
+					[moment().subtract(144, 'Desejado').valueOf(), 620],
+					[moment().subtract(108, 'Desejado').valueOf(), 380],
+					[moment().subtract(70, 'Desejado').valueOf(), 880],
+					[moment().subtract(30, 'Desejado').valueOf(), 450],
+					[moment().subtract(12, 'Desejado').valueOf(), 600],
 					[moment().valueOf(), 20]
 				],
 				last: true
 			},
 			{
-				label: 'Visitors',
+				label: 'IBN Detectado',
 				data: [
-					[moment().subtract(168, 'hours').valueOf(), 50],
-					[moment().subtract(155, 'hours').valueOf(), 520],
-					[moment().subtract(132, 'hours').valueOf(), 200],
-					[moment().subtract(36, 'hours').valueOf(), 800],
-					[moment().subtract(12, 'hours').valueOf(), 150],
+					[moment().subtract(168, 'IBN').valueOf(), 50],
+					[moment().subtract(155, 'IBN').valueOf(), 520],
+					[moment().subtract(132, 'IBN').valueOf(), 200],
+					[moment().subtract(36, 'IBN').valueOf(), 800],
+					[moment().subtract(12, 'IBN').valueOf(), 150],
 					[moment().valueOf(), 20]
 				],
 				last: true
 			}
 		];
-		
+
 		// Chart options
 		var labelColor = chart.css('color');
 		var options = {
@@ -146,7 +146,7 @@
 			}
 		};
 		chart.width('100%');
-		
+
 		// Create chart
 		var plot = $.plot(chart, data, options);
 
@@ -195,7 +195,7 @@
 		for (var i = 0; i < 75; i++) {
 			this.rickshawRandomData.addData(this.rickshawSeries);
 		}
-		
+
 		// Update knob charts
 		this._updateKnob();
 
@@ -276,7 +276,7 @@
 			}
 		});
 	};
-	
+
 	// =========================================================================
 	// FLOT
 	// =========================================================================
@@ -284,12 +284,12 @@
 	p._initFlotRegistration = function () {
 		var o = this;
 		var chart = $("#flot-registrations");
-		
+
 		// Elements check
 		if (!$.isFunction($.fn.plot) || chart.length === 0) {
 			return;
 		}
-		
+
 		// Chart data
 		var data = [
 			{
@@ -347,7 +347,7 @@
 			}
 		};
 		chart.width('100%');
-		
+
 		// Create chart
 		var plot = $.plot(chart, data, options);
 

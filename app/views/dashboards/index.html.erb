@@ -1,13 +1,16 @@
 <div class="row">
   <div class="text-center">
+  <p>Seja bem vindo Produs.</p>
+  <!--
     <pre>
       <%= @cobra.inspect %>
-    </pre>
+     </pre>
+  -->
   </div>
 
   <hr>
 
-  <!-- BEGIN ALERT - REVENUE -->
+  <!-- BEGIN ALERT - ROI -->
   <div class="col-md-3 col-sm-6">
     <div class="card">
       <div class="card-body no-padding">
@@ -16,7 +19,7 @@
             0,38% <%= material_icon.trending_up %>
           </strong>
           <strong class="text-xl">$ 32,829</strong><br/>
-          <span class="opacity-50">Revenue</span>
+          <span class="opacity-50">ROI</span>
           <div class="stick-bottom-left-right">
             <div class="height-2 sparkline-revenue" data-line-color="#bdc1c1"></div>
           </div>
@@ -24,9 +27,9 @@
       </div><!--end .card-body -->
     </div><!--end .card -->
   </div><!--end .col -->
-  <!-- END ALERT - REVENUE -->
+  <!-- END ALERT - ROI -->
 
-  <!-- BEGIN ALERT - VISITS -->
+  <!-- BEGIN ALERT - Uvas -->
   <div class="col-md-3 col-sm-6">
     <div class="card">
       <div class="card-body no-padding">
@@ -34,8 +37,8 @@
           <strong class="pull-right text-warning text-lg">
             0,01% <%= material_icon.swap_vert %>
           </strong>
-          <strong class="text-xl">432,901</strong><br/>
-          <span class="opacity-50">Visits</span>
+          <strong class="text-xl">300.000</strong><br/>
+          <span class="opacity-50">Uvas por hectare</span>
           <div class="stick-bottom-right">
             <div class="height-1 sparkline-visits" data-bar-color="#e5e6e6"></div>
           </div>
@@ -43,7 +46,7 @@
       </div><!--end .card-body -->
     </div><!--end .card -->
   </div><!--end .col -->
-  <!-- END ALERT - VISITS -->
+  <!-- END ALERT - UVAS -->
 
   <!-- BEGIN ALERT - BOUNCE RATES -->
   <div class="col-md-3 col-sm-6">
@@ -54,7 +57,7 @@
             0,18% <%= material_icon.trending_down %>
           </strong>
           <strong class="text-xl">42.90%</strong><br/>
-          <span class="opacity-50">Bounce rate</span>
+          <span class="opacity-50">Despesas</span>
           <div class="stick-bottom-left-right">
             <div class="progress progress-hairline no-margin">
               <div class="progress-bar progress-bar-danger" style="width:43%"></div>
@@ -66,19 +69,25 @@
   </div><!--end .col -->
   <!-- END ALERT - BOUNCE RATES -->
 
-  <!-- BEGIN ALERT - TIME ON SITE -->
+  <!-- BEGIN ALERT - RECEITA -->
   <div class="col-md-3 col-sm-6">
     <div class="card">
       <div class="card-body no-padding">
-        <div class="alert alert-callout alert-success no-margin">
-          <h1 class="pull-right text-success"><%= material_icon.timer.md_36 %></h1>
-          <strong class="text-xl">54 sec.</strong><br/>
-          <span class="opacity-50">Avg. time on site</span>
+        <div class="alert alert-callout alert-info no-margin">
+          <strong class="pull-right text-success text-lg">
+            24% <%= material_icon.trending_up %>
+          </strong>
+          <strong class="text-xl">$ 320,829</strong><br/>
+          <span class="opacity-50">Receitas</span>
+          <div class="stick-bottom-left-right">
+            <div class="height-2 sparkline-revenue" data-line-color="#bdc1c1"></div>
+          </div>
         </div>
       </div><!--end .card-body -->
     </div><!--end .card -->
   </div><!--end .col -->
-  <!-- END ALERT - TIME ON SITE -->
+  <!-- END ALERT - RECEITA -->
+
 </div><!--end .row -->
 
 <div class="row">
@@ -89,40 +98,40 @@
       <div class="row">
         <div class="col-md-8">
           <div class="card-head">
-            <header>Site activity</header>
+            <header>IBN - Índice de balanço nutricional </header>
           </div><!--end .card-head -->
           <div class="card-body height-8">
             <div id="flot-visitors-legend" class="flot-legend-horizontal stick-top-right no-y-padding"></div>
-            <div id="flot-visitors" class="flot height-7" data-title="Activity entry" data-color="#7dd8d2,#0aa89e"></div>
+            <div id="flot-visitors" class="flot height-7" data-title="IBN" data-color="#7dd8d2,#0aa89e"></div>
           </div><!--end .card-body -->
         </div><!--end .col -->
         <div class="col-md-4">
           <div class="card-head">
-            <header>Today's stats</header>
+            <header>Status hoje por hectare</header>
           </div>
           <div class="card-body height-8">
-            <strong>214</strong> members
+            <strong>214</strong> Uvas sadias
             <span class="pull-right text-success text-sm">
               0,18% <%= material_icon.trending_up %></span>
             <div class="progress progress-hairline">
               <div class="progress-bar progress-bar-primary-dark" style="width:43%"></div>
             </div>
-            756 pageviews
+            756 Prontas para colheita
             <span class="pull-right text-success text-sm">0,68% <%= material_icon.trending_up %></span>
             <div class="progress progress-hairline">
               <div class="progress-bar progress-bar-primary-dark" style="width:11%"></div>
             </div>
-            291 bounce rates
+            291 Uvas doentes
             <span class="pull-right text-danger text-sm">21,08% <%= material_icon.trending_down %></span>
             <div class="progress progress-hairline">
               <div class="progress-bar progress-bar-danger" style="width:93%"></div>
             </div>
-            32,301 visits
+            32,301 Uvas em entressafra
             <span class="pull-right text-success text-sm">0,18% <%= material_icon.trending_up %></span>
             <div class="progress progress-hairline">
               <div class="progress-bar progress-bar-primary-dark" style="width:63%"></div>
             </div>
-            132 pages
+            132 Uvas em plantio
             <span class="pull-right text-success text-sm">0,18% <%= material_icon.trending_up %></span>
             <div class="progress progress-hairline">
               <div class="progress-bar progress-bar-primary-dark" style="width:47%"></div>
@@ -138,11 +147,11 @@
   <div class="col-md-3">
     <div class="card">
       <div class="card-head">
-        <header class="text-primary">Server status</header>
+        <header class="text-primary">Temperatura Media</header>
       </div><!--end .card-head -->
       <div class="card-body height-4">
         <div class="pull-right text-center">
-          <em class="text-primary">Temperature</em>
+          <em class="text-primary">Temperatura</em>
           <br/>
           <div id="serverStatusKnob" class="knob knob-shadow knob-primary knob-body-track size-2">
             <input type="text" class="dial" data-min="0" data-max="100" data-thickness=".09" value="50" data-readOnly=true>
@@ -165,7 +174,7 @@
   <div class="col-md-3">
     <div class="card ">
       <div class="card-head">
-        <header>Todo's</header>
+        <header>Tarefas para hoje</header>
         <div class="tools">
           <a class="btn btn-icon-toggle btn-close"><%= material_icon.close.md_18 %></a>
         </div>
@@ -176,7 +185,7 @@
             <div class="checkbox checkbox-styled tile-text">
               <label>
                 <input type="checkbox" checked>
-                <span>Call clients for follow-up</span>
+                <span>Ligar para fornecedores</span>
               </label>
             </div>
             <a class="btn btn-flat ink-reaction btn-default">
@@ -188,8 +197,8 @@
               <label>
                 <input type="checkbox">
                 <span>
-                  Schedule meeting
-                  <small>opportunity for new customers</small>
+                  Reunião
+                  <small>Funcionários</small>
                 </span>
               </label>
             </div>
@@ -202,8 +211,8 @@
               <label>
                 <input type="checkbox">
                 <span>
-                  Upload files to server
-                  <small>The files must be shared with all members of the board</small>
+                  Verificar histórico semanal
+                  <small>Os relatórios da última semana estão prontos para avaliação</small>
                 </span>
               </label>
             </div>
@@ -215,7 +224,7 @@
             <div class="checkbox checkbox-styled tile-text">
               <label>
                 <input type="checkbox">
-                <span>Forward important tasks</span>
+                <span>Verificar e-mail do SANAR</span>
               </label>
             </div>
             <a class="btn btn-flat ink-reaction btn-default">
@@ -254,7 +263,7 @@
   <div class="col-md-6">
     <div class="card">
       <div class="card-head">
-        <header>Registration history</header>
+        <header>Historico do hectare 6</header>
         <div class="tools">
           <a class="btn btn-icon-toggle btn-refresh"><%= material_icon.refresh.md_18 %></a>
           <a class="btn btn-icon-toggle btn-collapse"><i class="fa fa-angle-down"></i></a>
@@ -267,19 +276,19 @@
             <div class="force-padding text-sm text-default-light">
               <p>
                 <i class="md md-mode-comment text-primary-light"></i>
-                The registrations are measured from the time that the redesign was fully implemented and after the first e-mailing.
+                O hectare 6 está em fase de descanso.
               </p>
             </div>
           </div><!--end .col -->
           <div class="col-sm-6">
             <div class="force-padding pull-right text-default-light">
               <h2 class="no-margin text-primary-dark"><span class="text-xxl">66.05%</span></h2>
-              <i class="fa fa-caret-up text-success fa-fw"></i> more registrations
+              <i class="fa fa-caret-up text-success fa-fw"></i> Produtividade da última safra
             </div>
           </div><!--end .col -->
         </div><!--end .row -->
         <div class="stick-bottom-left-right force-padding">
-          <div id="flot-registrations" class="flot height-5" data-title="Registration history" data-color="#0aa89e"></div>
+          <div id="flot-registrations" class="flot height-5" data-title="Historico" data-color="#0aa89e"></div>
         </div>
       </div><!--end .card-body -->
     </div><!--end .card -->
@@ -290,7 +299,7 @@
   <div class="col-md-3">
     <div class="card">
       <div class="card-head">
-        <header>New registrations</header>
+        <header>Funcionários</header>
         <div class="tools hidden-md">
           <a class="btn btn-icon-toggle btn-close">
             <%= material_icon.close.md_18 %>
