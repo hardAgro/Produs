@@ -2,7 +2,16 @@
 
 ## O que é
 Produs é um sistema que permite o acompanhamento contínuo, de fácil acesso, da composição nutricional de folhas de videira a fim orientar uma gestão eficiente de recursos e materiais para controle da produção.
-Acesse: <http://produs.herokuapp.com>
+
+<br>Acesse: <http://produs.herokuapp.com>
+
+Email: 'inova@farm.com' <br>
+Senha: 'farm123'
+
+Para acessar os relatórios de acompanhamento, [clique aqui](https://app.powerbi.com/groups/me/reports/68f51da9-c510-4c48-a5a8-fe28d9d393d5?ctid=304a1d2f-22e2-426e-89da-bc4f66a351f4).
+
+Email: 'paulo.hugo@esferaquatro.com.br' <br>
+Senha: 'Aq12wsde3'
 
 ## O que o Produs faz
   - Realiza leituras via fotosensor da concentração de clorofila e arranjo iônico dos nutrientes
@@ -29,13 +38,13 @@ rails db:drop db:create db:migrate db:seed
 rails s
 ```
 
-## Visualizações - Power Bi
+## Visualizações - Power BI
 * Obter Dados -> Banco de Dados PostgreSQL
 * Servidor - ec2-54-197-234-33.compute-1.amazonaws.com:5432
 * Banco de Dados - dcr56lsd8p6f7v
 * Credenciais:
-* Username - sklsmtvzqewggf
-* Password - ee65047d47e7a923d1470705e8b78f37811b29bddc362cab1adb7f390364f8f9
+  * Username - sklsmtvzqewggf
+  * Password - ee65047d47e7a923d1470705e8b78f37811b29bddc362cab1adb7f390364f8f9 
 
 ## NodeMCU
 O código para o sensor de luminosidade encontra-se no caminho `lib/chlorophyll-meter/chlorophyll-meter.ino`
