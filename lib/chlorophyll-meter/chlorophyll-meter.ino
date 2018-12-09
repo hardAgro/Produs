@@ -49,7 +49,8 @@ void loop() {
     Serial.println("Error in WiFi connection");
   }
 
-  delay(3600000); 
+  //delay(3600000); 
+  delay(10000); 
 }
 
 String chlorophyllMeter(){
