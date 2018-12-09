@@ -9,5 +9,6 @@ class Measurement < ApplicationRecord
     measurement = Measurement.create(ibn: ibn)
     concentrations.each { |c| c.update_attribute(:measurement_id, measurement.id) }
     dris.each { |d| d.update_attribute(:measurement_id, measurement.id) }
+    measurement.ibn
   end
 end
