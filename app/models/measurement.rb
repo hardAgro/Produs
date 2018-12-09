@@ -6,8 +6,8 @@ class Measurement < ApplicationRecord
     concentrations = Wavelength.calculate(irc)
     dris = Dri.calculate(concentrations)
     ibn = dris.pluck(:value).sum / dris.count
-    measurement = Measurement.create(ibn: ibn, concentrations: concentrations)
-    concentrations.update_all(measurement_id: measurement.id)
-    dris.update_all(measurement_id: measurement.id)
+    measurement = Measurement.create(ibn: ibn)
+    concentrations.each { |c| c.update_attribute(measurement_id: measurement.id) }
+    dris.each { |d| d.update_all(measurement_id: measurement.id) }
   end
 end
