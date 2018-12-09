@@ -13,7 +13,7 @@ Produs é um sistema que permite o acompanhamento contínuo, de fácil acesso, d
 ## Pré-Requisitos
 * Ruby 5.2.1
 * Rails 5.2.2
-* PostgreSQL 
+* PostgreSQL > 9.5
 
 ## Instalação
 #### Aplicação
@@ -28,6 +28,21 @@ $ rails db:drop db:create db:migrate db:seed
 ```sh
 $ rails s
 ```
+
+## NodeMCU
+O código para o sensor de luminosidade encontra-se no caminho `lib/chlorophyll-meter/chlorophyll-meter.ino`
+O único pré-requisito são as bibliotecas do ESP8266: ESP8266WiFi e ESP8266HTTPClient
+
+### Configuração de Rede
+```
+const char* ssid = "nome-do-wifi";
+const char* password = "senha";
+```
+### Configuração do Servidor
+```
+http.begin("http://www.endereco-do-site.com");
+```
+
 ## Licenças
 * [Produs](https://github.com/leodcs/produs) - MIT
 * [NodeMCU](http://www.nodemcu.com/index_en.html) - MIT
