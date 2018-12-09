@@ -1,6 +1,6 @@
 class Wavelength
   RED_LDR = 850
-  RED_LENGTH = 650
+  RED_LENGTH = 740
 
   class << self
     def convert(ldr)
