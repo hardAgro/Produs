@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2018_12_09_171201) do
     t.index ["plant_id"], name: "index_situations_on_plant_id"
   end
 
-  create_table "users", id: :serial, force: :cascade do |t|
+  create_table "users", id: :integer, default: nil, force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

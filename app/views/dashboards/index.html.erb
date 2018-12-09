@@ -2,92 +2,38 @@
   <div class="text-center">
     <h2>Seja bem vindo ao Produs.</h2>
   </div>
+</div>
 
-  <hr>
+<hr>
 
-  <!-- BEGIN ALERT - ROI -->
-  <div class="col-md-3 col-sm-6">
-    <div class="card">
-      <div class="card-body no-padding">
-        <%= @concentrations.inspect %>
-        <div class="alert alert-callout alert-info no-margin">
-          <strong class="pull-right text-success text-lg">
-            0,38% <%= material_icon.trending_up %>
-          </strong>
-          <strong class="text-xl">$ 32,829</strong><br/>
-          <span class="opacity-50">ROI</span>
-          <div class="stick-bottom-left-right">
-            <div class="height-2 sparkline-revenue" data-line-color="#bdc1c1"></div>
-          </div>
-        </div>
-      </div><!--end .card-body -->
-    </div><!--end .card -->
-  </div><!--end .col -->
-  <!-- END ALERT - ROI -->
-
-  <!-- BEGIN ALERT - Uvas -->
-  <div class="col-md-3 col-sm-6">
-    <div class="card">
-      <div class="card-body no-padding">
-        <div class="alert alert-callout alert-warning no-margin">
-          <strong class="pull-right text-warning text-lg">
-            0,01% <%= material_icon.swap_vert %>
-          </strong>
-          <strong class="text-xl">300.000</strong><br/>
-          <span class="opacity-50">Uvas por hectare</span>
-          <div class="stick-bottom-right">
-            <div class="height-1 sparkline-visits" data-bar-color="#e5e6e6"></div>
-          </div>
-        </div>
-      </div><!--end .card-body -->
-    </div><!--end .card -->
-  </div><!--end .col -->
-  <!-- END ALERT - UVAS -->
-
-  <!-- BEGIN ALERT - BOUNCE RATES -->
-  <div class="col-md-3 col-sm-6">
-    <div class="card">
-      <div class="card-body no-padding">
-        <div class="alert alert-callout alert-danger no-margin">
-          <strong class="pull-right text-danger text-lg">
-            0,18% <%= material_icon.trending_down %>
-          </strong>
-          <strong class="text-xl">42.90%</strong><br/>
-          <span class="opacity-50">Despesas</span>
-          <div class="stick-bottom-left-right">
-            <div class="progress progress-hairline no-margin">
-              <div class="progress-bar progress-bar-danger" style="width:43%"></div>
-            </div>
-          </div>
-        </div>
-      </div><!--end .card-body -->
-    </div><!--end .card -->
-  </div><!--end .col -->
-  <!-- END ALERT - BOUNCE RATES -->
-
-  <!-- BEGIN ALERT - RECEITA -->
-  <div class="col-md-3 col-sm-6">
-    <div class="card">
-      <div class="card-body no-padding">
-        <div class="alert alert-callout alert-info no-margin">
-          <strong class="pull-right text-success text-lg">
-            24% <%= material_icon.trending_up %>
-          </strong>
-          <strong class="text-xl">$ 320,829</strong><br/>
-          <span class="opacity-50">Receitas</span>
-          <div class="stick-bottom-left-right">
-            <div class="height-2 sparkline-revenue" data-line-color="#bdc1c1"></div>
-          </div>
-        </div>
-      </div><!--end .card-body -->
-    </div><!--end .card -->
-  </div><!--end .col -->
-  <!-- END ALERT - RECEITA -->
-
-</div><!--end .row -->
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table">
+          <thead>
+          <th class="col-md-3">Elemento</th>
+          <th class="col-md-3">Concentração</th>
+          <th class="col-md-3">Limite Inferior</th>
+          <th class="col-md-3">Limite Superior</th>
+          </thead>
+          <tbody>
+          <% @concentrations.each do |concentration| %>
+            <tr class="<%= concentration.acceptable ? 'success' : 'danger' %>">
+              <td><%= concentration.element.name %></td>
+              <td><%= concentration.value.round(4) %></td>
+              <td><%= concentration.element.inferior_limit.round(4) %></td>
+              <td><%= concentration.element.upper_limit.round(4) %></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="row">
-
   <!-- BEGIN SITE ACTIVITY -->
   <div class="col-md-9">
     <div class="card ">
